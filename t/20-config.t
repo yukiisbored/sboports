@@ -6,7 +6,7 @@ use warnings FATAL => 'all';
 use Test::More;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools qw/ sboconfig /;
+use Test::Sboports qw/ sboconfig /;
 
 plan tests => 20;
 
@@ -23,7 +23,7 @@ sboconfig '-V', 'invalid', { exit => 1, expected => "You have provided an invali
 SKIP: {
 	skip "Only run this test under Travis CI", 13 unless $ENV{TRAVIS};
 
-	my $dir = '/etc/sbotools';
+	my $dir = '/etc/sboports';
 	rename $dir, "$dir.moved";
 	system 'touch', $dir;
 
@@ -34,14 +34,14 @@ SKIP: {
 	sboconfig '-V', '14.1', { test => 0 };
 	ok(-d $dir, "$dir created correctly.");
 
-	unlink "$dir/sbotools.conf";
+	unlink "$dir/sboports.conf";
 
-	# set up sbotools.conf
-	open my $fh, '>', "$dir/sbotools.conf" or do {
+	# set up sboports.conf
+	open my $fh, '>', "$dir/sboports.conf" or do {
 		my $err = $!;
-		fail "Writing sbotools.conf";
-		diag "Could not open $dir/sbotools.conf for writing: $err";
-		skip 10, "Could not write sbotools.conf";
+		fail "Writing sboports.conf";
+		diag "Could not open $dir/sboports.conf for writing: $err";
+		skip 10, "Could not write sboports.conf";
 		goto CLEANUP;
 	};
 
@@ -59,11 +59,11 @@ SKIP: {
 
 	sboconfig '-V', '14.1', { test => 0 };
 
-	open my $cfh, '<', "$dir/sbotools.conf" or do {
+	open my $cfh, '<', "$dir/sboports.conf" or do {
 		my $err = $!;
-		fail "Reading sbotools.conf";
-		diag "Could not open $dir/sbotools.conf for reading: $err";
-		skip 10, "Could not read sbotools.conf";
+		fail "Reading sboports.conf";
+		diag "Could not open $dir/sboports.conf for reading: $err";
+		skip 10, "Could not read sboports.conf";
 		goto CLEANUP;
 	};
 
@@ -82,11 +82,11 @@ SKIP: {
 
 	sboconfig qw[ -V 14.0 -j 2 ], { test => 0 };
 
-	open $cfh, '<', "$dir/sbotools.conf" or do {
+	open $cfh, '<', "$dir/sboports.conf" or do {
 		my $err = $!;
-		fail "Reading sbotools.conf";
-		diag "Could not open $dir/sbotools.conf for reading: $err";
-		skip 3, "Could not read sbotools.conf";
+		fail "Reading sboports.conf";
+		diag "Could not open $dir/sboports.conf for reading: $err";
+		skip 3, "Could not read sboports.conf";
 		goto CLEANUP;
 	};
 
@@ -99,7 +99,7 @@ SKIP: {
 	is($lines[8], undef, "Nothing new collapsed.");
 
 	CLEANUP:
-	unlink "$dir/sbotools.conf";
+	unlink "$dir/sboports.conf";
 	rmdir $dir;
 	rename "$dir.moved", $dir;
 }

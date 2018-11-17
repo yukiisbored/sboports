@@ -7,7 +7,7 @@ use Test::More;
 use Capture::Tiny qw/ capture_merged /;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools qw/ make_slackbuilds_txt set_lo sbofind replace_tags_txt set_repo sbosnap /;
+use Test::Sboports qw/ make_slackbuilds_txt set_lo sbofind replace_tags_txt set_repo sbosnap /;
 use File::Temp 'tempdir';
 
 plan tests => 7;

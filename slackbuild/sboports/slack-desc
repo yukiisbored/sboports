@@ -1,0 +1,11 @@
+sboports: sboports (ports-like interface to slackbuilds.org)
+sboports:
+sboports: sboports is a set of perl scripts providing a ports-like automation
+sboports: interface to slackbuilds.org. Its features include requirement
+sboports: handling and the ability to handle 32-bit and compat32 builds on
+sboports: multilib x86_64 systems.
+sboports:
+sboports: https://gitlab.com/yuki_is_bored/sboports
+sboports:
+sboports:
+sboports:

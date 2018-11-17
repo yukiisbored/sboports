@@ -1,10 +1,10 @@
-.TH sbotools.conf 5 "Setting Orange, Chaos 45, 3184 YOLD" "sbotools 2.5" dawnrazor.net
+.TH sboports.conf 5
 .SH NAME
 .P
-sbotools.conf - configuration file for sbotools commands.
+sboports.conf - configuration file for sboports commands.
 .SH DESCRIPTION
 .P
-This file, location at /etc/sbotools/sbotools.conf, contains KEY=VALUE configuration parameters, and is read by all of the sbotools commands.
+This file, location at /etc/sboports/sboports.conf, contains KEY=VALUE configuration parameters, and is read by all of the sboports commands.
 .P
 The current configuration keys are as follows:
 .P
@@ -25,7 +25,7 @@ If TRUE, then DO NOT clean working directories after building the slackbuild. Th
 .P
 PKG_DIR=(FALSE|/path)
 .RS
-If set to a path, packages will be stored at the given location after building and installing. By default, packages are left where they are deposited by SlackBuilds, which is typically (probably always) /tmp (or $OUTPUT). If PKG_DIR is FALSE and DISTCLEAN is TRUE (either in sbotools.conf(5) or at sboupgrade/sboinstall runtime), the package will be deleted. If this option is set to a path in the filesystem, the package will be stored in that directory, regardless of any DISTCLEAN option.
+If set to a path, packages will be stored at the given location after building and installing. By default, packages are left where they are deposited by SlackBuilds, which is typically (probably always) /tmp (or $OUTPUT). If PKG_DIR is FALSE and DISTCLEAN is TRUE (either in sboports.conf(5) or at sboupgrade/sboinstall runtime), the package will be deleted. If this option is set to a path in the filesystem, the package will be stored in that directory, regardless of any DISTCLEAN option.
 .RE
 .P
 SBO_HOME=(/usr/sbo|/path)
@@ -52,8 +52,4 @@ If set to a url, use that repository instead of the SlackBuilds.org repository f
 sbocheck(1), sboclean(1), sboconfig(1), sbofind(1), sboinstall(1), sboremove(1), sbosnap(1), sboupgrade(1)
 .SH AUTHORS
 .P
-Jacob Pipkin <j@dawnrazor.net>
-.P
-Luke Williams <xocel@iquidus.org>
-.P
-Andreas Guldstrand <andreas.guldstrand@gmail.com>
+sboports is maintained by contributors of the project. sboports is a fork of sbotools which was written by Jacob Pipkin \fB<j@dawnrazor.net>\fP, Luke Williams \fB<xocel@iquidus.org>\fP and Andreas Guldstrand \fB<andreas.guldstrand@gmail.com>\fP.

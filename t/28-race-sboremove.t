@@ -10,7 +10,7 @@ use Capture::Tiny qw/ capture_merged /;
 use File::Temp 'tempdir';
 use Cwd;
 use feature 'state';
-use Test::Sbotools qw/ set_repo set_lo sboinstall sbosnap load /;
+use Test::Sboports qw/ set_repo set_lo sboinstall sbosnap load /;
 
 if ($ENV{TEST_INSTALL}) {
 	plan tests => 2;

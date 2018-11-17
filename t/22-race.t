@@ -103,9 +103,9 @@ GIT
 
 # 8: emulate race in read_config
 {
-  my $conf_file = "/etc/sbotools/sbotools.conf";
+  my $conf_file = "/etc/sboports/sboports.conf";
 
-  mkdir "/etc/sbotools";
+  mkdir "/etc/sboports";
   rename $conf_file, "$conf_file.bak";
   system touch => $conf_file;
 

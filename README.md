@@ -1,3 +1,5 @@
-# sbotools [![Build Status](https://travis-ci.org/pink-mist/sbotools.svg)](https://travis-ci.org/pink-mist/sbotools)
+# sboports
 
-**[sbotools](https://pink-mist.github.io/sbotools/)** provides a ports-like interface to [slackbuilds.org](http://www.slackbuilds.org/).
+sboports provides a ports-like interface to [slackbuilds.org][sbo]
+
+[sbo]: //www.slackbuilds.org/

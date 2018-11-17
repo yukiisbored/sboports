@@ -70,7 +70,7 @@ our %EXPORT_TAGS = (
 
 =head1 NAME
 
-SBO::Lib::Util - Utility functions for SBO::Lib and the sbotools
+SBO::Lib::Util - Utility functions for SBO::Lib and the sboports.
 
 =head1 SYNOPSIS
 
@@ -83,11 +83,11 @@ SBO::Lib::Util - Utility functions for SBO::Lib and the sbotools
 
 =head2 $conf_dir
 
-By default, C<$conf_dir> will be C</etc/sbotools>.
+By default, C<$conf_dir> will be C</etc/sboports>.
 
 =head2 $conf_file
 
-By default, C<$conf_file> will be C</etc/sbotools/sbotools.conf>.
+By default, C<$conf_file> will be C</etc/sboports.conf>.
 
 =head2 %config
 
@@ -101,8 +101,8 @@ C<SBO_HOME>, C<LOCAL_OVERRIDES>, C<SLACKWARE_VERSION>, C<REPO>.
 =cut
 
 # global config variables
-our $conf_dir = '/etc/sbotools';
-our $conf_file = "$conf_dir/sbotools.conf";
+our $conf_dir = '/etc/sboports';
+our $conf_file = "$conf_dir/sboports.conf";
 our %config = (
   NOCLEAN => 'FALSE',
   DISTCLEAN => 'FALSE',
@@ -382,7 +382,7 @@ sub prompt {
   read_config();
 
 C<read_config()> reads in the configuration settings from
-C</etc/sbotools/sbotools.conf> and updates the C<%config> hash with them.
+C</etc/sboports/sboports.conf> and updates the C<%config> hash with them.
 
 There is no useful return value.
 
@@ -436,7 +436,7 @@ sub script_error {
 
   show_version();
 
-C<show_version()> will print out the sbotools version and licensing information
+C<show_version()> will print out the sboports version and licensing information
 to STDOUT.
 
 There is no useful return value.
@@ -444,7 +444,7 @@ There is no useful return value.
 =cut
 
 sub show_version {
-  say "sbotools version $SBO::Lib::VERSION";
+  say "sboports version $SBO::Lib::VERSION";
   say 'licensed under the WTFPL';
   say '<http://sam.zoy.org/wtfpl/COPYING>';
 }
@@ -544,11 +544,13 @@ sub _race::cond { return }
 SBO::Lib was originally written by Jacob Pipkin <j@dawnrazor.net> with
 contributions from Luke Williams <xocel@iquidus.org> and Andreas
 Guldstrand <andreas.guldstrand@gmail.com>.
+It is now forked under the sboports project and maintained by sboports contributors.
 
 =head1 LICENSE
 
-The sbotools are licensed under the WTFPL <http://sam.zoy.org/wtfpl/COPYING>.
+The sboports are licensed under the WTFPL <http://sam.zoy.org/wtfpl/COPYING>.
 
+Copyright (C) 2018, sboports contributors.
 Copyright (C) 2012-2017, Jacob Pipkin, Luke Williams, Andreas Guldstrand.
 
 =cut

@@ -6,7 +6,7 @@ use Test::More;
 use Test::Exit;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools 'load';
+use Test::Sboports 'load';
 use Capture::Tiny qw/ capture_merged /;
 use File::Temp 'tempdir';
 use Cwd;

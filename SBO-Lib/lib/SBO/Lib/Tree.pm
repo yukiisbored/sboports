@@ -163,11 +163,13 @@ sub is_local {
 SBO::Lib was originally written by Jacob Pipkin <j@dawnrazor.net> with
 contributions from Luke Williams <xocel@iquidus.org> and Andreas
 Guldstrand <andreas.guldstrand@gmail.com>.
+It is now forked under the sboports project and maintained by sboports contributors.
 
 =head1 LICENSE
 
-The sbotools are licensed under the WTFPL <http://sam.zoy.org/wtfpl/COPYING>.
+The sboports are licensed under the WTFPL <http://sam.zoy.org/wtfpl/COPYING>.
 
+Copyright (C) 2018, sboports contributors.
 Copyright (C) 2012-2017, Jacob Pipkin, Luke Williams, Andreas Guldstrand.
 
 =cut

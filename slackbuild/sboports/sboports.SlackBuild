@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# Slackware build script for <sbotools>
+# Slackware build script for <sboports>
 # Written by Jacob Pipkin <j@dawnrazor.net>
 # Licensed under the WTFPL <http://sam.zoy.org/wtfpl/COPYING>
 
-PRGNAM=sbotools
+PRGNAM=sboports
 VERSION=${VERSION:-2.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}

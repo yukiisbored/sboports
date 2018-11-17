@@ -1,0 +1,12 @@
+sboports (ports-like interface to slackbuilds.org)
+
+sboports is a set of perl scripts providing a ports-like automation
+interface to slackbuilds.org. Its features include requirement handling
+and the ability to handle 32-bit and compat32 builds on multilib
+x86_64 systems.
+
+sboports bundles the required Perl module Sort::Versions with it. This does
+not interfere with a copy installed from the CPAN, or from slackbuilds.org.
+
+sbotools was written and maintained by d4wnr4z0r, xocel, and pink_mist. It is
+now forked under the name sboports and maintained by sboports contributors.

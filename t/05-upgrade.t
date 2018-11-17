@@ -7,7 +7,7 @@ use Test::More;
 use Capture::Tiny qw/ capture_merged /;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools qw/ make_slackbuilds_txt set_lo sboconfig sboinstall sboupgrade restore_perf_dummy set_repo sbosnap /;
+use Test::Sboports qw/ make_slackbuilds_txt set_lo sboconfig sboinstall sboupgrade restore_perf_dummy set_repo sbosnap /;
 use File::Temp 'tempdir';
 
 if ($ENV{TEST_INSTALL}) {

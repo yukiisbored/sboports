@@ -6,6 +6,6 @@ WriteMakefile(
     NAME              => 'SBO::Lib',
     VERSION_FROM      => 'lib/SBO/Lib.pm',
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT       => 'methods, variables, etc for the sbotools pacage',
-       AUTHOR         => 'Jacob Pipkin <j@dawnrazor.net>') : ()),
+      (ABSTRACT       => 'methods, variables, etc for the sboports package',
+       AUTHOR         => 'sboports contributors') : ()),
 );

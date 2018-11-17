@@ -8,7 +8,7 @@ use Capture::Tiny qw/ capture_merged /;
 use FindBin '$RealBin';
 use lib $RealBin;
 use lib "$RealBin/../SBO-Lib/lib";
-use Test::Sbotools qw/ sboconfig sbosnap sbofind sboinstall sboremove sbocheck sboupgrade /;
+use Test::Sboports qw/ sboconfig sbosnap sbofind sboinstall sboremove sbocheck sboupgrade /;
 
 if (defined $ENV{TRAVIS} and $ENV{TRAVIS} eq 'true') {
 	plan tests => 26;

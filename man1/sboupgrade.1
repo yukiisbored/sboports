@@ -1,4 +1,4 @@
-.TH sboupgrade 1 "Setting Orange, Chaos 45, 3184 YOLD" "sbotools 2.5" dawnrazor.net
+.TH sboupgrade 1
 .SH NAME
 .P
 sboupgrade - install or upgrade slackbuilds
@@ -24,12 +24,12 @@ Show version information.
 .P
 -c|--noclean (FALSE|TRUE)
 .RS
-If TRUE, then DO NOT clean working directories after building the slackbuild. These are the directories where the source is unpacked and compiled, and where the package is put together in, which are under /tmp/SBo (or $TMP). By default, these directories are removed after building an slackbuild. This option leaves those directories in place. This can be set as default via the sboconfig(1) command. Also see sbotools.conf(5). This option overrides the default.
+If TRUE, then DO NOT clean working directories after building the slackbuild. These are the directories where the source is unpacked and compiled, and where the package is put together in, which are under /tmp/SBo (or $TMP). By default, these directories are removed after building an slackbuild. This option leaves those directories in place. This can be set as default via the sboconfig(1) command. Also see sboports.conf(5). This option overrides the default.
 .RE
 .P
 -d|--distclean (FALSE|TRUE)
 .RS
-If TRUE, then DO remove the source code after building the slackbuild. By default, the source code is not removed, and lives under $SBO_HOME/distfiles, which, by default, is /usr/sbo/distfiles; this option can be set as default via the sboconfig(1) command. See also sbotools.conf(5). This option overrides the default.
+If TRUE, then DO remove the source code after building the slackbuild. By default, the source code is not removed, and lives under $SBO_HOME/distfiles, which, by default, is /usr/sbo/distfiles; this option can be set as default via the sboconfig(1) command. See also sboports.conf(5). This option overrides the default.
 .RE
 .P
 -f|--force
@@ -39,7 +39,7 @@ Force an upgrade, even if the installed version is equal to or less than the sla
 .P
 -i|--noinstall
 .RS
-Do not actually install the package created at the end of the build process. So, the slackbuild will be run, and the package will be left in /tmp (or $OUTPUT), or in $PKG_DIR if so defined (see sboconfig(1) and sbotools.conf(5)).
+Do not actually install the package created at the end of the build process. So, the slackbuild will be run, and the package will be left in /tmp (or $OUTPUT), or in $PKG_DIR if so defined (see sboconfig(1) and sboports.conf(5)).
 .RE
 .P
 -j|--jobs (FALSE|#)
@@ -100,14 +100,10 @@ sboupgrade can exit with the following exit codes:
 .RE
 .SH BUGS
 .P
-None known, but there may be some. Please report any found to https://github.com/pink-mist/sbotools/issues ; patches are always welcome.
+None known, but there may be some. Please report any found to https://gitlab.com/yuki_is_bored/sboports/issues ; patches are always welcome.
 .SH SEE ALSO
 .P
-sbocheck(1), sboclean(1), sboconfig(1), sbofind(1), sboinstall(1), sboremove(1), sbosnap(1), sbotools.conf(5)
+sbocheck(1), sboclean(1), sboconfig(1), sbofind(1), sboinstall(1), sboremove(1), sbosnap(1), sboports.conf(5)
 .SH AUTHORS
 .P
-Jacob Pipkin <j@dawnrazor.net>
-.P
-Luke Williams <xocel@iquidus.org>
-.P
-Andreas Guldstrand <andreas.guldstrand@gmail.com>
+sboports is maintained by contributors of the project. sboports is a fork of sbotools which was written by Jacob Pipkin \fB<j@dawnrazor.net>\fP, Luke Williams \fB<xocel@iquidus.org>\fP and Andreas Guldstrand \fB<andreas.guldstrand@gmail.com>\fP.

@@ -7,7 +7,7 @@ use Test::More;
 use Capture::Tiny qw/ capture_merged /;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools qw/ set_lo set_jobs sboinstall sboremove sboconfig restore_perf_dummy make_slackbuilds_txt sboupgrade /;
+use Test::Sboports qw/ set_lo set_jobs sboinstall sboremove sboconfig restore_perf_dummy make_slackbuilds_txt sboupgrade /;
 
 if ($ENV{TEST_INSTALL}) {
 	plan tests => 9;

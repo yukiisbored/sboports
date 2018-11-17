@@ -1,4 +1,4 @@
-package Test::Sbotools;
+package Test::Sboports;
 
 use strict;
 use warnings;

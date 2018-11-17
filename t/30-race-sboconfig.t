@@ -6,7 +6,7 @@ use Test::More;
 use Test::Exit;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools 'load';
+use Test::Sboports 'load';
 use Capture::Tiny qw/ capture_merged /;
 use File::Temp 'tempdir';
 use Cwd;
@@ -17,8 +17,8 @@ plan tests => 2;
 {
 	load('sboconfig');
 
-  my $file = "/etc/sbotools/sbotools.conf";
-  mkdir "/etc/sbotools";
+  my $file = "/etc/sboports/sboports.conf";
+  mkdir "/etc/sboports";
   rename $file, "$file.bak";
 
   no warnings 'redefine', 'once';

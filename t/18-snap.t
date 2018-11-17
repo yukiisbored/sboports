@@ -7,7 +7,7 @@ use Test::More;
 use Capture::Tiny qw/ capture_merged /;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools qw/ sbosnap set_repo set_sbo_home /;
+use Test::Sboports qw/ sbosnap set_repo set_sbo_home /;
 use File::Temp 'tempdir';
 
 plan tests => 4;

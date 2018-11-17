@@ -8,7 +8,7 @@ use Capture::Tiny qw/ capture_merged /;
 use FindBin '$RealBin';
 use lib $RealBin;
 use lib "$RealBin/../SBO-Lib/lib";
-use Test::Sbotools qw/ make_slackbuilds_txt sbocheck sboclean sboconfig sbofind sboinstall sboremove sbosnap sboupgrade /;
+use Test::Sboports qw/ make_slackbuilds_txt sbocheck sboclean sboconfig sbofind sboinstall sboremove sbosnap sboupgrade /;
 use SBO::Lib;
 
 plan tests => 8;
@@ -17,7 +17,7 @@ make_slackbuilds_txt();
 
 my $version = $SBO::Lib::VERSION;
 my $ver_text = <<"VERSION";
-sbotools version $version
+sboports version $version
 licensed under the WTFPL
 <http://sam.zoy.org/wtfpl/COPYING>
 VERSION
@@ -31,4 +31,3 @@ sboinstall '-v', { expected => $ver_text };
 sboremove '-v', { expected => $ver_text };
 sbosnap '-v', { expected => $ver_text };
 sboupgrade '-v', { expected => $ver_text };
-

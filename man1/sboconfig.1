@@ -1,13 +1,13 @@
-.TH sboconfig 1 "Setting Orange, Chaos 45, 3184 YOLD" "sbotools 2.5" dawnrazor.net
+.TH sboconfig 1
 .SH NAME
 .P
-sboconfig - set sbotools configuration options.
+sboconfig - set sboports configuration options.
 .SH SYNAPSES
 .P
 sboconfig [-h|-v] [-l] [-c TRUE|FALSE] [-d TRUE|FALSE] [-j #|FALSE] [-p /path|FALSE] [-s /path|/usr/sbo]
 .SH DESCRIPTION
 .P
-sboconfig is a front-end for managing sbotools configuration options. The sbotools.conf(5) file can also be manually edited; any fields not relevant to sbotools configuration will be ignored.
+sboconfig is a front-end for managing sboports configuration options. The sboports.conf(5) file can also be manually edited; any fields not relevant to sboports configuration will be ignored.
 .SH OPTIONS
 .P
 -h|--help
@@ -22,7 +22,7 @@ Show version information.
 .P
 -l|--list
 .RS
-List out current configuration options, including unmodified default configuration options (meaning that if a given option is not set in the sbotools.conf(5) file, the default will be shown for that option). Also shows the flag to sboconfig used to set each option.
+List out current configuration options, including unmodified default configuration options (meaning that if a given option is not set in the sboports.conf(5) file, the default will be shown for that option). Also shows the flag to sboconfig used to set each option.
 .RE
 .P
 -c|--noclean (FALSE|TRUE)
@@ -42,7 +42,7 @@ JOBS: If numeric (2,5,10, etc), then that number will be fed to the "-j" argumen
 .P
 -p|--pkg-dir (FALSE|/path)
 .RS
-PKG_DIR: If set to a path, packages will be stored at the given location after building and installing. By default, packages are left where they are deposited by slackbuilds, which is typically (probably always) /tmp (or $OUTPUT). If PKG_DIR is FALSE and DISTCLEAN is TRUE (either in sbotools.conf(5) or at sboupgrade/sboinstall runtime), the package will be deleted. If this option is set to a path in the filesystem, the package will be stored in that directory, regardless of any DISTCLEAN option.
+PKG_DIR: If set to a path, packages will be stored at the given location after building and installing. By default, packages are left where they are deposited by slackbuilds, which is typically (probably always) /tmp (or $OUTPUT). If PKG_DIR is FALSE and DISTCLEAN is TRUE (either in sboports.conf(5) or at sboupgrade/sboinstall runtime), the package will be deleted. If this option is set to a path in the filesystem, the package will be stored in that directory, regardless of any DISTCLEAN option.
 .RE
 .P
 -s|--sbo-home (/usr/sbo|/path)
@@ -79,14 +79,10 @@ sboconfig can exit with the following codes:
 .RE
 .SH BUGS
 .P
-None known, but there may be some. Please report any found to https://github.com/pink-mist/sbotools/issues ; patches are always welcome.
+None known, but there may be some. Please report any found to https://gitlab.com/yuki_is_bored/sboports/issues ; patches are always welcome.
 .SH SEE ALSO
 .P
-sbocheck(1), sboclean(1), sbofind(1), sboinstall(1), sboremove(1), sbosnap(1), sboupgrade(1), sbotools.conf(5)
+sbocheck(1), sboclean(1), sbofind(1), sboinstall(1), sboremove(1), sbosnap(1), sboupgrade(1), sboports.conf(5)
 .SH AUTHORS
 .P
-Jacob Pipkin <j@dawnrazor.net>
-.P
-Luke Williams <xocel@iquidus.org>
-.P
-Andreas Guldstrand <andreas.guldstrand@gmail.com>
+sboports is maintained by contributors of the project. sboports is a fork of sbotools which was written by Jacob Pipkin \fB<j@dawnrazor.net>\fP, Luke Williams \fB<xocel@iquidus.org>\fP and Andreas Guldstrand \fB<andreas.guldstrand@gmail.com>\fP.

@@ -7,7 +7,7 @@ use Test::More;
 use Capture::Tiny qw/ capture_merged /;
 use FindBin '$RealBin';
 use lib $RealBin;
-use Test::Sbotools qw/ make_slackbuilds_txt set_lo sboinstall sboclean sboremove restore_perf_dummy /;
+use Test::Sboports qw/ make_slackbuilds_txt set_lo sboinstall sboclean sboremove restore_perf_dummy /;
 use File::Temp 'tempdir';
 
 $ENV{TEST_MULTILIB} //= 0;

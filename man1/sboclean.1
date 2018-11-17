@@ -1,13 +1,13 @@
-.TH sboclean 1 "Setting Orange, Chaos 45, 3184 YOLD" "sbotools 2.5" dawnrazor.net
+.TH sboclean 1
 .SH NAME
 .P
-sboclean - clean files left around by sbotools.
+sboclean - clean files left around by sboports.
 .SH SYNAPSES
 .P
 sboclean [-h|-v] [-dwi]
 .SH DESCRIPTION
 .P
-sboclean is used to clean files left around by sbotools, such as downloaded source files ("distfiles"), or work directories under /tmp/SBo (or $TMP) and, for compat32 installs, under /tmp (or $TMP). Note that if not run with the -i flag, sboclean will remove anything in the distfiles or /tmp/SBo (or $TMP) folders and any /tmp/package-*-compat32 (or $TMP/package-*-compat32) directories with extreme prejudice. One of either -d or -w must be specified for this script to do anything.
+sboclean is used to clean files left around by sboports, such as downloaded source files ("distfiles"), or work directories under /tmp/SBo (or $TMP) and, for compat32 installs, under /tmp (or $TMP). Note that if not run with the -i flag, sboclean will remove anything in the distfiles or /tmp/SBo (or $TMP) folders and any /tmp/package-*-compat32 (or $TMP/package-*-compat32) directories with extreme prejudice. One of either -d or -w must be specified for this script to do anything.
 .SH OPTIONS
 .P
 -h|--help
@@ -46,14 +46,10 @@ sboclean can exit with the following codes:
 
 .SH BUGS
 .P
-None known, but there may be some. Please report any found to https://github.com/pink-mist/sbotools/issues ; patches are always welcome.
+None known, but there may be some. Please report any found to https://gitlab.com/yuki_is_bored/sboports/issues ; patches are always welcome.
 .SH SEE ALSO
 .P
-sbocheck(1), sboconfig(1), sbofind(1), sboinstall(1), sboremove(1), sbosnap(1), sboupgrade(1), sbotools.conf(5)
-.SH AUTHOR
+sbocheck(1), sboconfig(1), sbofind(1), sboinstall(1), sboremove(1), sbosnap(1), sboupgrade(1), sboports.conf(5)
+.SH AUTHORS
 .P
-Jacob Pipkin <j@dawnrazor.net>
-.P
-Luke Williams <xocel@iquidus.org>
-.P
-Andreas Guldstrand <andreas.guldstrand@gmail.com>
+sboports is maintained by contributors of the project. sboports is a fork of sbotools which was written by Jacob Pipkin \fB<j@dawnrazor.net>\fP, Luke Williams \fB<xocel@iquidus.org>\fP and Andreas Guldstrand \fB<andreas.guldstrand@gmail.com>\fP.
