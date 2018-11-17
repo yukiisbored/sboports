@@ -17,6 +17,6 @@ then
 	touch /etc/profile.d/32dev.sh
 	cp -a t/travis-deps/convertpkg-compat32 /usr/sbin
 fi
-git config --global user.email "sbotools@travis.ci"
-git config --global user.name "Travis CI"
+git config --global user.email "sbotools@gitlab.com"
+git config --global user.name "GitLab CI"
 echo "travis-deps/install.sh: Done.";

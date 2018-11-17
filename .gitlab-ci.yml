@@ -1,0 +1,107 @@
+# GitLab CI Configuration
+
+# Definitions:
+#  - pure       : Non-multilib environment
+#  - multilib   : Multilib environment without convertpkg
+#  - convertpkg : Multilib environment with convertpkg
+
+# YAML Templates for tests
+# ========================
+
+# Offline tests
+# -------------
+
+.test:template:offline:pure: &test_template_offline_pure
+  before_script:
+    - echo "TEST_ONLINE=$TEST_ONLINE, TEST_INSTALL=$TEST_INSTALL, TEST_MUTLILIB=$TEST_MULTILIB"
+    - perl -v
+    - bash ./t/travis-deps/install.sh
+    - cpanm Text::Diff Capture::Tiny Test::Output Devel::Cover Test::Exit
+  script:
+    - "PERL5OPT='-MDevel::Cover=-coverage,statement,branch,condition,path,subroutine,+ignore,t/,+ignore,prove,dbprove' prove -v t/*.t"
+  variables:
+    TEST_ONLINE: 0
+    TEST_INSTALL: 1
+    TEST_MULTILIB: 0
+    TRAVIS: 'true' # TODO: Replace the tests with proper GitLab CI checks
+
+.test:template:offline:multilib: &test_template_offline_multilib
+  <<: *test_template_offline_pure
+  variables:
+    TEST_ONLINE: 0
+    TEST_INSTALL: 1
+    TEST_MULTILIB: 1
+    TRAVIS: 'true' # TODO: Replace the tests with proper GitLab CI checks
+
+.test:template:offline:convertpkg: &test_template_offline_convertpkg
+  <<: *test_template_offline_pure
+  variables:
+    TEST_ONLINE: 0
+    TEST_INSTALL: 1
+    TEST_MULTILIB: 2
+    TRAVIS: 'true' # TODO: Replace the tests with proper GitLab CI checks
+
+# Online tests
+# ------------
+
+.test:template:online:pure: &test_template_online_pure
+  <<: *test_template_offline_pure
+  variables:
+    TEST_ONLINE: 1
+    TEST_INSTALL: 1
+    TEST_MULTILIB: 0
+    TRAVIS: 'true'
+
+
+.test:template:online:multilib: &test_template_online_multilib
+  <<: *test_template_offline_pure
+  variables:
+    TEST_ONLINE: 1
+    TEST_INSTALL: 1
+    TEST_MULTILIB: 1
+    TRAVIS: 'true' # TODO: Replace the tests with proper GitLab CI checks
+
+.test:template:online:convertpkg: &test_template_online_convertpkg
+  <<: *test_template_offline_pure
+  variables:
+    TEST_ONLINE: 1
+    TEST_INSTALL: 1
+    TEST_MULTILIB: 2
+    TRAVIS: 'true' # TODO: Replace the tests with proper GitLab CI checks
+
+# Stages
+# ======
+
+stages:
+  - test
+  - package
+
+# Tests
+# =====
+
+# Latest Perl
+# -----------
+
+test:latest:offline:pure:
+  image: perl:latest
+  <<: *test_template_offline_pure
+
+test:latest:offline:multilib:
+  image: perl:latest
+  <<: *test_template_offline_multilib
+
+test:latest:offline:convertpkg:
+  image: perl:latest
+  <<: *test_template_offline_convertpkg
+
+test:latest:online:pure:
+  image: perl:latest
+  <<: *test_template_online_pure
+
+test:latest:online:multilib:
+  image: perl:latest
+  <<: *test_template_online_multilib
+
+test:latest:online:convertpkg:
+  image: perl:latest
+  <<: *test_template_online_convertpkg
